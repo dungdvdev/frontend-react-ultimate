@@ -1,0 +1,11 @@
+.admin-container {
+    display: flex;
+    gap: 20px;
+    .pro-sidebar {
+        height: 100vh;
+    }
+    .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+        position: relative;
+        background-color: rgb(43 43 43 / 70%);
+    }
+}
