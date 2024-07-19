@@ -10,6 +10,8 @@ import {
 import { FaGem, FaGithub, FaFacebook } from 'react-icons/fa';
 import { DiReact } from 'react-icons/di';
 import { MdDashboard } from "react-icons/md";
+import { Link } from 'react-router-dom';
+
 import sidebarBg from '../../asset/bg2.jpg';
 import 'react-pro-sidebar/dist/scss/styles.scss';
 
@@ -45,6 +47,7 @@ function Sidebar({ image, collapsed, handleToggleSidebar }) {
                             icon={<MdDashboard />}
                         >
                             Dashboard
+                            <Link to='/admins' />
                         </MenuItem>
                     </Menu>
                     <Menu iconShape="circle">
@@ -52,7 +55,7 @@ function Sidebar({ image, collapsed, handleToggleSidebar }) {
                             title='Feature'
                             icon={<FaGem />}
                         >
-                            <MenuItem>Manager Users</MenuItem>
+                            <MenuItem>Manager Users <Link to='/admins/manage-users' /></MenuItem>
                             <MenuItem>Manager Quiz</MenuItem>
                             <MenuItem>Manager Questions</MenuItem>
                         </SubMenu>

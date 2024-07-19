@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import User from './components/User/User';
 import Admin from './components/Admin/Admin';
 import Homepage from './components/Home/Homepage';
+import Dashboard from './components/Admin/Content.js/Dashboard';
+import ManageUser from './components/Admin/Content.js/ManageUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,7 +23,10 @@ root.render(
           <Route index element={<Homepage />} />
           <Route path="users" element={<User />} />
         </Route>
-        <Route path="admins" element={<Admin />} />
+        <Route path="admins" element={<Admin />}>
+          <Route index element={<Dashboard />} />
+          <Route path="manage-users" element={<ManageUser />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
