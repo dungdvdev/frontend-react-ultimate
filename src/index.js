@@ -11,8 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import User from './components/User/User';
 import Admin from './components/Admin/Admin';
 import Homepage from './components/Home/Homepage';
-import Dashboard from './components/Admin/Content.js/Dashboard';
-import ManageUser from './components/Admin/Content.js/ManageUser';
+import Dashboard from './components/Admin/Content/Dashboard';
+import ManageUser from './components/Admin/Content/ManageUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
