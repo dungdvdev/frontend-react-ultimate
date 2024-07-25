@@ -5,6 +5,11 @@
     font-weight: 500;
     padding: 0 15px;
     height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 .btn-signup {
     border:1px solid #000;

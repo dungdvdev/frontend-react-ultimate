@@ -1,0 +1,60 @@
+.login-container {
+    .header {
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 20px;
+        gap: 10px;
+        align-items: center;
+        font-size: 14px;
+        button {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 3px 15px;
+            background: #fff;
+            height: 30px;
+        }
+        
+        button:hover {
+            background: #000;
+            color: #fff;
+        }
+    }
+}
+
+.login-content {
+    .title {
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .wellcome {
+        font-size: 20px ;
+        line-height: 24px ;
+        font-weight: 400 ;
+        color: rgb(76, 76, 76);
+    }
+}
+
+.login-form {
+    max-width: 256px;
+    margin: 0 auto;
+    .btn-submit {
+        background-color: #262627;
+        height: 40px;
+        width: 100%;
+        border: none;
+    }
+    .form-group {
+        label {
+            margin-bottom: 5px;
+        }
+    }
+    .back {
+        cursor: pointer;
+    }
+    .form-forgot {
+        a {
+            color: #777;
+            font-size: 14px;
+        }
+    }
+}

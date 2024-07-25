@@ -2,9 +2,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.scss';
 function Header() {
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate("/login");
+    }
+
+    const handleRegister = () => {
+        navigate("/signup");
+    }
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
@@ -17,8 +26,8 @@ function Header() {
                         <NavLink to='/admins' className='nav-link'>Admin</NavLink>
                     </Nav>
                     <Nav>
-                        <button className='btn-login'>Log in</button>
-                        <button className='btn-signup'>Sign up</button>
+                        <button onClick={() => handleLogin()} className='btn-login'>Log in</button>
+                        <button onClick={() => handleRegister()} className='btn-signup'>Sign up</button>
 
                         {/* <NavDropdown title="Settings" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Log In</NavDropdown.Item>

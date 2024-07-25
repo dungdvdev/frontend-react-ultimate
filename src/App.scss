@@ -18,3 +18,61 @@ body {
     }
   }
 }
+.hero-module-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  display: grid;
+  align-items: center;
+  }
+
+.hero-module-media {
+  overflow: hidden;
+}
+
+.hero-module-content {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: left;
+  gap: 20px;
+}
+
+h1.hero-module--title {
+  font-size: 80px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+p.hero-module-body {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+a.hero-signup {
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: rgb(25, 25, 25);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(25, 25, 25);
+  border-image: initial;
+  text-decoration: none;
+}
+
+.hero-module-action {
+  text-align: left;
+}

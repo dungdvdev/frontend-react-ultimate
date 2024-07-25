@@ -1,0 +1,93 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 20px;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+    button {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 3px 15px;
+        background: #fff;
+        height: 30px;
+    }
+    
+    button:hover {
+        background: #000;
+        color: #fff;
+    }
+}
+.register-content {
+    .title {
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .wellcome {
+        font-size: 20px ;
+        line-height: 24px ;
+        font-weight: 400 ;
+        color: rgb(76, 76, 76);
+    }
+}
+
+
+.register-form {
+    max-width: 256px;
+    margin: 0 auto;
+    .btn-submit {
+        background-color: #262627;
+        height: 40px;
+        width: 100%;
+        border: none;
+    }
+    .form-group {
+        label {
+            margin-bottom: 5px;
+        }
+    }
+    .back {
+        cursor: pointer;
+    }
+}
+
+.form-input-password {
+    position: relative;
+}
+
+.form-input-password .form-control {
+    height: 38px;
+    display: inline-block;
+    border: 1px solid rgb(194, 194, 193);
+    border-radius: 5px;
+    position: relative;
+    padding-right: 35px;
+}
+.form-input-password-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    outline: inherit;
+    height: 0px;
+    width: 0px;
+    padding: 0px;
+}
+.form-input-eyeicon {
+    right: 5px;
+    position: absolute;
+    top: 58%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    padding: 6px 8px;
+    opacity: 0.175;
+    cursor: pointer;
+    font-size: 0px;
+    user-select: none;
+}
+.form-input-eyeicon-hide::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M27.375 21.813 22 16.375V16c0-3.375-2.625-6-6-6h-.375L12 6.375C13.375 6.187 14.625 6 16 6c10.375 0 16 8.813 16 10 0 .625-1.625 3.375-4.625 5.813ZM20 25.625c-1.375.188-2.625.375-4 .375-10.375 0-16-8.375-16-9.813 0-.812 1.625-3.562 4.625-6L10 15.625V16c0 3.375 2.625 6 6 6h.375ZM6.375 4 28 25.625 25.625 28 4 6.375Zm0 0'/%3E%3C/svg%3E");
+}
+.form-input-eyeicon-show::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 16c-.8125-.8125 1.1875-4 0-4-2.1875 0-4 1.8125-4 4s1.8125 4 4 4 4-1.8125 4-4c0-1-3.375.8125-4 0Zm0-10C5.625 6 0 14.8125 0 16.1875 0 17.625 5.625 26 16 26s16-8.8125 16-10S26.375 6 16 6Zm0 16c-3.375 0-6-2.625-6-6s2.625-6 6-6 6 2.625 6 6-2.625 6-6 6Zm0 0'/%3E%3C/svg%3E");
+}
