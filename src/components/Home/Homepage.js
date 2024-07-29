@@ -1,6 +1,9 @@
+// import { useSelector } from 'react-redux';
 import video from '../../asset/videos/hero.mp4';
 
 function Homepage() {
+    // const isAuthenicated = useSelector(state => state.user.isAuthenicated);
+    // const account = useSelector(state => state.user.account);
     return (
         <div className="homepage-container">
             <div className='hero-module'>

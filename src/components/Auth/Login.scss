@@ -42,6 +42,11 @@
         height: 40px;
         width: 100%;
         border: none;
+        &:disabled {
+            background-color: #ddd;
+            color: #fafafa;
+            cursor: no-drop;
+        }
     }
     .form-group {
         label {
@@ -56,5 +61,22 @@
             color: #777;
             font-size: 14px;
         }
+    }
+    .loader-icon{
+        font-size: 14px;
+        color: #1cb2ba;
+        margin-right: 7px;
+        top: 2px;
+        animation: spin 1s infinite linear;
+    }
+}
+
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
     }
 }
