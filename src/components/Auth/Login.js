@@ -41,7 +41,7 @@ function Login() {
             dispatch(doLogin(data));
             toast.success(data.EM);
             setIsLoading(false);
-            // navigate('/');
+            navigate('/');
         }
         if (data.EC !== 0) {
             toast.error(data.EM);
