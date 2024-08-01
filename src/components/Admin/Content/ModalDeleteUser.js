@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { toast } from 'react-toastify';
-import { deleteUser } from '../../services/apiService';
+import { deleteUser } from '../../../services/apiService';
 
 function ModalDeleteUser({ show, setShowModalDeleteUser, dataUpdate, setCurrentPage, fetchListUsersWithnPaginate }) {
     const handleClose = () => setShowModalDeleteUser(false);

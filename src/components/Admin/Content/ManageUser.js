@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllUsers, getUserWithPaginate } from '../../services/apiService';
+import { getAllUsers, getUserWithPaginate } from '../../../services/apiService';
 
 import ModalCreateUser from "./ModalCreateUser";
 import './ManageUser.scss';

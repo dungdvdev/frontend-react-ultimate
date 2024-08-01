@@ -10,8 +10,7 @@ import './Header.scss';
 function Header() {
     const navigate = useNavigate();
     const isAuthenicated = useSelector(state => state.user.isAuthenicated);
-    const account = useSelector(state => state.user.account);
-    console.log(isAuthenicated);
+    // const account = useSelector(state => state.user.account);
 
     const handleLogin = () => {
         navigate("/login");

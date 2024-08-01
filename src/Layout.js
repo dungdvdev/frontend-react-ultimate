@@ -3,7 +3,6 @@ import {
     Route,
 } from "react-router-dom";
 import App from './App';
-import User from './components/User/User';
 import Admin from './components/Admin/Admin';
 import Homepage from './components/Home/Homepage';
 import Dashboard from './components/Admin/Content/Dashboard';
@@ -12,6 +11,7 @@ import Login from './components/Auth/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Register from "./components/Auth/Register";
+import ListQuiz from "./components/User/ListQuiz";
 
 function Layout() {
     return (
@@ -19,7 +19,7 @@ function Layout() {
             <Routes>
                 <Route path="/" element={<App />}>
                     <Route index element={<Homepage />} />
-                    <Route path="users" element={<User />} />
+                    <Route path="users" element={<ListQuiz />} />
                 </Route>
                 <Route path="admins" element={<Admin />}>
                     <Route index element={<Dashboard />} />

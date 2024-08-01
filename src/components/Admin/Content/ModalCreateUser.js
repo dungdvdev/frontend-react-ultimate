@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import { MdOutlineCloudUpload } from "react-icons/md";
 import { FaRegPlusSquare } from "react-icons/fa";
 import { toast } from 'react-toastify';
-import { postCreateNewUser } from '../../services/apiService';
+import { postCreateNewUser } from '../../../services/apiService';
 
 function ModalCreateUser({ fetchListUsersWithnPaginate, currentPage, setCurrentPage }) {
     const [show, setShow] = useState(false);

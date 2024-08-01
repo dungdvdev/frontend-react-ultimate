@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { MdOutlineCloudUpload } from "react-icons/md";
 import { toast } from 'react-toastify';
-import { putUpdateNewUser } from '../../services/apiService';
+import { putUpdateNewUser } from '../../../services/apiService';
 import _ from 'lodash';
 
 function ModalUpdateUser({ show, setShowModalUpdateUser, fetchListUsersWithnPaginate, dataUpdate, restUpdateData, currentPage }) {

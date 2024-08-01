@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.scss';
-import { postLogin } from "../../components/services/apiService";
+import { postLogin } from "../../services/apiService";
 import { toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
 import { doLogin } from '../../redux/action/userAction';
