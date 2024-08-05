@@ -11,11 +11,12 @@ import { FaGem, FaGithub, FaFacebook } from 'react-icons/fa';
 import { DiReact } from 'react-icons/di';
 import { MdDashboard } from "react-icons/md";
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import sidebarBg from '../../asset/bg2.jpg';
 import 'react-pro-sidebar/dist/scss/styles.scss';
 
 function Sidebar({ image, collapsed, handleToggleSidebar }) {
+    const navigation = useNavigate();
     return (
         <>
             <ProSidebar
@@ -33,11 +34,14 @@ function Sidebar({ image, collapsed, handleToggleSidebar }) {
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             whiteSpace: 'nowrap',
-                            letterSpacing: '3px'
+                            letterSpacing: '3px',
+                            cursor: 'pointer'
                         }}
+                        onClick={() => navigation('/')}
                     >
                         <DiReact size={'3em'} color={'00bfff'} />
-                        <span style={{ paddingLeft: '10px' }}>iQuizz</span>
+
+                        <span style={{ paddingLeft: '10px' }}>iQuizz </span>
                     </div>
                 </SidebarHeader>
 
@@ -56,7 +60,7 @@ function Sidebar({ image, collapsed, handleToggleSidebar }) {
                             icon={<FaGem />}
                         >
                             <MenuItem>Manager Users <Link to='/admins/manage-users' /></MenuItem>
-                            <MenuItem>Manager Quiz</MenuItem>
+                            <MenuItem>Manager Quiz <Link to='/admins/manage-quiz' /></MenuItem>
                             <MenuItem>Manager Questions</MenuItem>
                         </SubMenu>
                     </Menu>

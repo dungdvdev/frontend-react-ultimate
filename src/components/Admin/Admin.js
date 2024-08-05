@@ -3,7 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import { Outlet } from 'react-router-dom';
 import './Admin.scss';
 import Sidebar from "./Sidebar";
-
+import { Scrollbar } from 'react-scrollbars-custom';
 
 function Admin() {
     const [collapsed, setCollapsed] = useState(false);
@@ -17,9 +17,12 @@ function Admin() {
                     <div className="admin-header">
                         <FaBars size={'1.5rem'} onClick={() => setCollapsed(!collapsed)} />
                     </div>
-                    <div className="admin-main">
-                        <Outlet />
-                    </div>
+                    <Scrollbar className="admin-scroll">
+                        <div className="admin-main">
+                            <Outlet />
+                        </div>
+                    </Scrollbar>
+
 
                 </div>
 
