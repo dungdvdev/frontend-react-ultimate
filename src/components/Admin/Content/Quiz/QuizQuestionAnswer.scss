@@ -1,0 +1,88 @@
+.questions-container {
+    overflow: hidden;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+.group-upload {
+    label.label-upload {
+        cursor: pointer;
+        margin-right: 10px;
+        color: purple;
+        font-size: 25px;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+.group-actions {
+    .icon-add, 
+    .icon-remove {
+        font-size: 25px;
+        margin-right: 10px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .icon-add {
+        color: #01bfff;
+    }
+    .icon-remove {
+        color: orange;
+    }
+}
+.questions-content {
+    .form-question {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+    .form-floating.description {
+        width: 50%;
+    }
+}
+
+.form-floating.description {
+    width: 50%;
+}
+
+.answer-content.d-flex {
+    gap: 20px;
+    padding-left: 20px;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.form-floating.answer-name {
+    width: 50%;
+}
+
+.group-actions.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.group-actions.btn-group svg {
+    font-size: 25px;
+    cursor: pointer;
+}
+.group-actions.btn-group {
+    span:first-child svg{
+        color: #01bfff;
+    }
+    span:last-child svg{
+        color: orange;
+    }
+    span {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+.group-select {
+    z-index: 2;
+}
+.q-main {
+    z-index: 1;
+}

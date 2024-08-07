@@ -3,8 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import { toast } from 'react-toastify';
 import { deleteQuiz } from '../../../../services/apiService';
 
-function ModalDeleteQuiz({ show, setShowModal, dataUpdate }) {
-    const handleClose = () => setShowModal(false);
+function ModalDeleteQuiz({ show, setShowModalDelete, dataUpdate }) {
+    const handleClose = () => setShowModalDelete(false);
 
     const handleSubmitDeleteQuiz = async () => {
         let data = await deleteQuiz(dataUpdate.id);

@@ -1,4 +1,11 @@
 .list-quiz-container {
     display: flex;
     gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    img.card-img-top {
+        max-height: 212px;
+        height: 100%;
+        object-fit: cover;
+    }
 }

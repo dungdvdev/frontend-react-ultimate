@@ -61,7 +61,7 @@ function Sidebar({ image, collapsed, handleToggleSidebar }) {
                         >
                             <MenuItem>Manager Users <Link to='/admins/manage-users' /></MenuItem>
                             <MenuItem>Manager Quiz <Link to='/admins/manage-quiz' /></MenuItem>
-                            <MenuItem>Manager Questions</MenuItem>
+                            <MenuItem>Manager Questions <Link to='/admins/manage-questions' /></MenuItem>
                         </SubMenu>
                     </Menu>
                 </SidebarContent>

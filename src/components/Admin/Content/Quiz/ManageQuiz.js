@@ -7,6 +7,8 @@ import TableQuiz from './TableQuiz';
 import Accordion from 'react-bootstrap/Accordion';
 import ModalDeleteQuiz from './ModalDeleteQuiz';
 import ModalUpdateQuiz from './ModalUpdateQuiz';
+import QuizQuestionAnswer from './QuizQuestionAnswer';
+import AssignQuiz from './AssignQuiz';
 
 const options = [
     { value: 'EASY', label: 'EASY' },
@@ -20,13 +22,14 @@ function ManageQuiz() {
     const [type, setType] = useState(null);
     const [image, setImage] = useState(null);
     const [dataUpdate, setDataUpdate] = useState({});
-    const [showModal, setShowModal] = useState(false);
+    const [showModalUpdate, setShowModalUpdate] = useState(false);
+    const [showModalDelete, setShowModalDelete] = useState(false);
     const [listQuiz, setlistQuiz] = useState([]);
 
 
     useEffect(() => {
         fetchListAllQuiz();
-    }, [showModal])
+    }, [showModalUpdate, showModalDelete])
 
     const fetchListAllQuiz = async () => {
         let res = await getAllQuizData();
@@ -41,12 +44,12 @@ function ManageQuiz() {
     }
 
     const handleClickBtnDelete = (quiz) => {
-        setShowModal(true);
+        setShowModalDelete(true);
         setDataUpdate(quiz);
     }
 
     const handleClickBtnUpdate = (quiz) => {
-        setShowModal(true);
+        setShowModalUpdate(true);
         setDataUpdate(quiz);
     }
 
@@ -83,7 +86,7 @@ function ManageQuiz() {
             <hr />
             <Accordion defaultActiveKey="0">
                 <Accordion.Item>
-                    <Accordion.Header>Add New Quiz</Accordion.Header>
+                    <Accordion.Header>Manager Quiz</Accordion.Header>
                     <Accordion.Body>
                         <div className="quiz-form">
                             <fieldset className="border rounded-3 p-3">
@@ -129,29 +132,44 @@ function ManageQuiz() {
                                 </div>
                             </fieldset>
                         </div>
+                        <div className='quiz-table mt-3'>
+                            <TableQuiz
+                                handleClickBtnDelete={handleClickBtnDelete}
+                                handleClickBtnUpdate={handleClickBtnUpdate}
+                                listQuiz={listQuiz}
+                            />
+                            <ModalDeleteQuiz
+                                show={showModalDelete}
+                                setShowModalDelete={setShowModalDelete}
+                                handleClickBtnDelete={handleClickBtnDelete}
+                                dataUpdate={dataUpdate}
+                            />
+                            <ModalUpdateQuiz
+                                show={showModalUpdate}
+                                setShowModalUpdate={setShowModalUpdate}
+                                dataUpdate={dataUpdate}
+                                restUpdateData={restUpdateData}
+                            />
+                        </div>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-
-            <div className='quiz-table mt-3'>
-                <TableQuiz
-                    handleClickBtnDelete={handleClickBtnDelete}
-                    handleClickBtnUpdate={handleClickBtnUpdate}
-                    listQuiz={listQuiz}
-                />
-                <ModalDeleteQuiz
-                    show={showModal}
-                    setShowModal={setShowModal}
-                    handleClickBtnDelete={handleClickBtnDelete}
-                    dataUpdate={dataUpdate}
-                />
-                <ModalUpdateQuiz
-                    show={showModal}
-                    setShowModal={setShowModal}
-                    dataUpdate={dataUpdate}
-                    restUpdateData={restUpdateData}
-                />
-            </div>
+            <Accordion defaultActiveKey="1">
+                <Accordion.Item>
+                    <Accordion.Header>Update Q/A Quizzes</Accordion.Header>
+                    <Accordion.Body>
+                        <QuizQuestionAnswer />
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
+            <Accordion defaultActiveKey="2">
+                <Accordion.Item>
+                    <Accordion.Header>Assign to User</Accordion.Header>
+                    <Accordion.Body>
+                        <AssignQuiz />
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
         </div>
     );
 }

@@ -6,9 +6,9 @@ import { toast } from 'react-toastify';
 import { putUpdateQuiz } from '../../../../services/apiService';
 import _ from 'lodash';
 
-function ModalUpdateQuiz({ show, setShowModal, dataUpdate, restUpdateData }) {
+function ModalUpdateQuiz({ show, setShowModalUpdate, dataUpdate, restUpdateData }) {
     const handleClose = () => {
-        setShowModal(false);
+        setShowModalUpdate(false);
         setName('');
         setDescription('');
         setDifficulty('')
