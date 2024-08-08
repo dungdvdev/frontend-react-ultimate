@@ -23,6 +23,7 @@
             object-fit: contain;
             margin: 0 auto;
             display: block;
+            cursor: zoom-in;
         }
         .answer-item {
             display: flex;
@@ -35,5 +36,38 @@
         border: 1px solid #ccc;
         padding: 15px;
         border-radius: 8px;
+    }
+}
+.group-timer {
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-size: 20px;
+}
+
+.group-questions {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    .question-item {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover {
+            color: red;
+        }
+        &.selected {
+            background-color: #c6c6c6;
+        }
+        &.clicked {
+            background-color: #c6c6c6;
+            color: red;
+        }
     }
 }

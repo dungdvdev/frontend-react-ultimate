@@ -5,7 +5,6 @@ const TableUserPaginate = ({ listUsers, handleClickBtnUpdate, handleClickViewUpd
     const handlePageClick = (event) => {
         fetchListUsersWithnPaginate(+event.selected + 1);
         setCurrentPage(+event.selected + 1);
-        console.log(`User requested page number ${event.selected}`);
     };
 
     return (

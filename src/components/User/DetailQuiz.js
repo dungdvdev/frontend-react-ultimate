@@ -5,6 +5,7 @@ import { getQuizDataById, postSubmitQuiz } from '../../services/apiService';
 import './DetailQuiz.scss';
 import Question from './Question';
 import ModalQuizResult from './ModalQuizResult';
+import RightContent from './RightContent';
 
 function DetailQuiz() {
     const params = useParams();
@@ -15,8 +16,6 @@ function DetailQuiz() {
     const [index, setIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [dataModal, setDataModal] = useState({});
-
-
 
     const handlePrev = () => {
         if (index - 1 < 0) return;
@@ -86,7 +85,6 @@ function DetailQuiz() {
     useEffect(() => {
         const fetchQuetions = async () => {
             const res = await getQuizDataById(quizId);
-            // console.log(res);
             if (res && res.EC === 0) {
                 let raw = res.DT;
                 let data = _.chain(raw)
@@ -123,7 +121,9 @@ function DetailQuiz() {
                     <div className='quiz-content'>
                         <Question
                             handleCheckbox={handleCheckbox}
-                            data={dataQuiz && dataQuiz.length > 0 && dataQuiz[index]} index={index} />
+                            data={dataQuiz && dataQuiz.length > 0 && dataQuiz[index]}
+                            index={index}
+                        />
                         <div className='quiz-actions'>
                             <button
                                 disabled={index - 1 < 0}
@@ -145,8 +145,14 @@ function DetailQuiz() {
                     }
 
                 </div>
-                <div className='right-content'>Count down</div>
-            </div >
+                <div className='right-content'>
+                    <RightContent
+                        data={dataQuiz}
+                        setIndex={setIndex}
+                        handleFinishQuiz={handleFinishQuiz}
+                    />
+                </div>
+            </div>
         </>
     );
 }

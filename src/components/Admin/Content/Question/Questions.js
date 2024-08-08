@@ -121,7 +121,6 @@ function Questions() {
             questionClone[index].imageName = event.target.files[0].name;
             setQuestions(questionClone);
         }
-        console.log('>> questions:', questions);
     }
 
     const handleAnswerQuestion = (type, answerId, questionId, value) => {
@@ -207,7 +206,6 @@ function Questions() {
         }
         toast.success('Create question and answer success.');
         setQuestions(initQuestion);
-        console.log(initQuestion, questions);
     }
     const handlePreviewImage = (questionId) => {
         let questionClone = _.cloneDeep(questions);

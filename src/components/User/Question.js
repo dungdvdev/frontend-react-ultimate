@@ -1,6 +1,11 @@
 import _ from 'lodash';
+import { Lightbox } from "react-modal-image";
+import { useState } from 'react';
+
 
 function Question({ data, index, handleCheckbox }) {
+    const [isShowPreviewImage, setIsShowPreviewImage] = useState(false)
+
     if (_.isEmpty(data)) {
         return (
             <></>
@@ -15,7 +20,14 @@ function Question({ data, index, handleCheckbox }) {
         <>
             {data.image &&
                 <div className='quiz-image mb-3'>
-                    <img className='image' src={`data:image/png;base64, ${data.image}`} alt='Quiz' />
+                    <img onClick={() => setIsShowPreviewImage(true)} className='image' src={`data:image/png;base64, ${data.image}`} alt='Quiz' />
+                    {
+                        isShowPreviewImage && <Lightbox
+                            medium={`data:image/png;base64, ${data.image}`}
+                            alt='Question Image'
+                            onClose={() => setIsShowPreviewImage(false)}
+                        />
+                    }
                 </div>
             }
 

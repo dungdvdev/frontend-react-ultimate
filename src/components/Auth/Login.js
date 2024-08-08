@@ -49,6 +49,11 @@ function Login() {
         }
     }
 
+    const handleOnKeyDown = (event) => {
+        if (event.keyCode === 13) {
+            handleLogin();
+        }
+    }
     return (
         <>
             <div className="login-container">
@@ -66,7 +71,14 @@ function Login() {
                         </div>
                         <div className="form-group py-2">
                             <label htmlFor="inputPassword">Password</label>
-                            <input type="password" className="form-control" id="inputPassword" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Password" />
+                            <input
+                                type="password"
+                                className="form-control"
+                                id="inputPassword"
+                                value={password} onChange={(event) => setPassword(event.target.value)}
+                                placeholder="Password"
+                                onKeyDown={(event) => handleOnKeyDown(event)}
+                            />
                         </div>
                         <div className="form-forgot">
                             <a href={'/login/password/request'}>Forgot password?</a>
