@@ -6,8 +6,11 @@ import { toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
 import { doLogin } from '../../redux/action/userAction';
 import { ImSpinner6 } from "react-icons/im";
+import Language from "../Header/Language";
+import { useTranslation } from 'react-i18next';
 
 function Login() {
+    const { t } = useTranslation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -59,7 +62,8 @@ function Login() {
             <div className="login-container">
                 <div className="header">
                     <span className="signup-link">Don't have an account yet?</span>
-                    <button onClick={() => { navigate('/signup') }}>Sign up</button>
+                    <button onClick={() => { navigate('/signup') }}>{t('textlogin')}</button>
+                    <Language />
                 </div>
                 <div className="login-content col-4 mx-auto pt-4">
                     <div className="title py-2 text-center">Login</div>

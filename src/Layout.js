@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import ManagerQuiz from "./components/Admin/Content/Quiz/ManageQuiz";
 import Questions from "./components/Admin/Content/Question/Questions";
 import PrivateRoute from "./routes/PrivateRoute";
+import { Suspense } from 'react';
 
 const NotFound = () => {
     const navigation = useNavigate();
@@ -41,7 +42,7 @@ const NotFound = () => {
 }
 function Layout() {
     return (
-        <>
+        <Suspense fallback="...is loading">
             <Routes>
                 <Route path="/" element={<App />}>
                     <Route index element={<Homepage />} />
@@ -78,7 +79,7 @@ function Layout() {
                 pauseOnHover
                 theme="light"
             />
-        </>
+        </Suspense>
     );
 }
 

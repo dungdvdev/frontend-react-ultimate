@@ -1,4 +1,4 @@
-import axios from '../components/utils/axiosCustomize';
+import axios from '../utils/axiosCustomize';
 
 const postCreateNewUser = (email, password, username, role, image) => {
     const data = new FormData();

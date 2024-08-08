@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './Register.scss';
 import { postRegister } from "../../services/apiService";
 import { toast } from 'react-toastify';
+import Language from "../Header/Language";
 
 function Register() {
     const [email, setEmail] = useState('');
@@ -60,6 +61,7 @@ function Register() {
                 <div className="header">
                     <span className="signup-link">Already have an account?</span>
                     <button onClick={() => { navigate('/login') }}>Login</button>
+                    <Language />
                 </div>
                 <div className="register-content col-4 mx-auto pt-4">
                     <div className="title py-2 text-center">Register</div>

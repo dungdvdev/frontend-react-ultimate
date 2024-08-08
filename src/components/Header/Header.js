@@ -8,8 +8,11 @@ import './Header.scss';
 import { logout } from '../../services/apiService';
 import { toast } from 'react-toastify';
 import { doLogout } from '../../redux/action/userAction';
+import Language from './Language';
+import { useTranslation } from 'react-i18next';
 
 function Header() {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const isAuthenicated = useSelector(state => state.user.isAuthenicated);
     const account = useSelector(state => state.user.account);
@@ -39,19 +42,20 @@ function Header() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <NavLink to='/' className='nav-link'>Home</NavLink>
-                        <NavLink to='/users' className='nav-link'>Users</NavLink>
-                        <NavLink to='/admins' className='nav-link'>Admin</NavLink>
+                        <NavLink to='/' className='nav-link'>{t('navlinkhome')}</NavLink>
+                        <NavLink to='/users' className='nav-link'>{t('navlinkusers')}</NavLink>
+                        <NavLink to='/admins' className='nav-link'>{t('navlinkadmin')}</NavLink>
                     </Nav>
                     <Nav>
+                        <Language />
                         {isAuthenicated === false ?
                             <>
-                                <button onClick={() => handleLogin()} className='btn-login'>Log in</button>
-                                <button onClick={() => handleRegister()} className='btn-signup'>Sign up</button>
+                                <button onClick={() => handleLogin()} className='btn-login'>{t('textlogin')}</button>
+                                <button onClick={() => handleRegister()} className='btn-signup'>{t('textsignin')}</button>
                             </>
                             :
                             <NavDropdown title="Settings" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.3">Profile</NavDropdown.Item>
+                                <NavDropdown.Item >Profile</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item onClick={() => handleLogOut()}>
                                     Log out

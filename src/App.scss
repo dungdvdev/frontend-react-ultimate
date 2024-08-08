@@ -75,3 +75,8 @@ p.hero-module-body {
 .hero-module-action {
   text-align: left;
 }
+.languages {
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+}
