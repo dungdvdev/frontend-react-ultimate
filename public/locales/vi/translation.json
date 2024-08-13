@@ -3,5 +3,17 @@
     "navlinkusers": "Người dùng",
     "navlinkadmin": "Quản trị",
     "textlogin": "Đăng nhập",
-    "textsignin": "Đăng ký"
+    "textsignin": "Đăng ký",
+    "textprofile": "Thông tin tài khoản",
+    "textlogout": "Đăng xuất",
+    "textsettings": "Cài đặt",
+    "homepagetitle1": "Làm cho các biểu mẫu đáng để điền vào",
+    "homepagetitle2": "Nhận thêm dữ liệu như đăng ký, phản hồi và bất kỳ thông tin nào khác với các biểu mẫu được thiết kế để khác biệt một cách mới mẻ.",
+    "homepagebtnlogin": "Đăng nhập bài thi",
+    "homepagebtnusers": "Làm bài kiểm tra ngay bây giờ",
+    "textsidebardashboard": "Bảng điều khiển",
+    "textsidebarFeature": "Tính Năng",
+    "textsidebarManagerUsers": "Quản lý người dùng",
+    "textsidebarManagerQuiz": "Quản lý bài thi",
+    "textsidebarManagerQuestions": "Quảng lý câu hỏi"
 }

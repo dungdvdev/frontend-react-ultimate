@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import { Lightbox } from "react-modal-image";
 import { useState } from 'react';
+import { IoIosClose, IoIosCheckmark } from "react-icons/io";
 
-
-function Question({ data, index, handleCheckbox }) {
+function Question({ data, index, handleCheckbox, isShowAnswer }) {
     const [isShowPreviewImage, setIsShowPreviewImage] = useState(false)
 
     if (_.isEmpty(data)) {
@@ -41,6 +41,7 @@ function Question({ data, index, handleCheckbox }) {
                         <div key={`${index}-answer`} className='answer-item'>
                             <div className="form-check">
                                 <input
+                                    disabled={isShowAnswer}
                                     checked={item.isSelected}
                                     className="form-check-input"
                                     type="checkbox"
@@ -49,6 +50,12 @@ function Question({ data, index, handleCheckbox }) {
                                 <label className="form-check-label">
                                     <span>{item.description}</span>
                                 </label>
+                                {isShowAnswer === true &&
+                                    <>
+                                        {item.isSelected === true && item.isCorrect === false && <IoIosClose className='incorrect' />}
+                                        {item.isCorrect === true && <IoIosCheckmark className='correct' />}
+                                    </>
+                                }
                             </div>
                         </div>
                     )

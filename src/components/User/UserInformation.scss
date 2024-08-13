@@ -1,0 +1,27 @@
+.image-preview {
+    height: 150px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+.label-upload-file {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #ccc;
+    padding: 3px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 10px;
+    &:hover {
+        background-color: #ddd;
+    }
+}

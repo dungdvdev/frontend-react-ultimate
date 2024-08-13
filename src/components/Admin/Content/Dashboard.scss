@@ -1,0 +1,42 @@
+.dashboard-container {
+    padding: 48px;
+    background: rgb(247, 249, 252);
+    height: 100vh;
+    .dashboard-header {
+        h3 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+    
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .grid-item {
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(50, 50, 93, 0.024) 0px 2px 5px -1px, rgba(0, 0, 0, 0.05) 0px 1px 3px -1px;
+        background-image: none;
+        position: relative;
+        transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        border-radius: 6px;
+        padding: 16px;
+    }
+    
+    h6 {
+        margin: 0px 0px 24px;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.25;
+    }
+    .dashboard-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}

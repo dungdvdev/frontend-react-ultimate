@@ -115,11 +115,33 @@ const logout = (email, refresh_token) => {
     });
 }
 
+const getDashboardOverview = () => {
+    return axios.get(`api/v1/overview`);
+}
+
+const postUpdateProfile = (username, image) => {
+    const data = new FormData();
+    data.append('username', username);
+    data.append('userImage', image);
+    return axios.post('api/v1/profile', data);
+}
+const postChangePassword = (currentPassword, newPassword) => {
+    const data = new FormData();
+    data.append('current_password', currentPassword);
+    data.append('new_password', newPassword);
+    return axios.post('api/v1/change-password', data);
+}
+
+const getHistoryUser = () => {
+    return axios.get(`api/v1/history`);
+}
+
 export {
     postCreateNewUser, getAllUsers, putUpdateNewUser,
     deleteUser, getUserWithPaginate, postLogin, postRegister,
     getQuizByUser, getQuizDataById, postSubmitQuiz, postCreateNewQuiz,
     getAllQuizData, deleteQuiz, putUpdateQuiz, postCreateNewQuestionForQuiz,
     postCreateNewAnswerForQuestion, postAssignQuizUser, getQuizQA,
-    postUpsertQuizQA, logout
+    postUpsertQuizQA, logout, getDashboardOverview, postUpdateProfile,
+    postChangePassword, getHistoryUser
 } 

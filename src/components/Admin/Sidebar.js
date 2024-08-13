@@ -14,9 +14,12 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import sidebarBg from '../../asset/bg2.jpg';
 import 'react-pro-sidebar/dist/scss/styles.scss';
+import { useTranslation } from 'react-i18next';
 
 function Sidebar({ image, collapsed, handleToggleSidebar }) {
     const navigation = useNavigate();
+    const { t } = useTranslation();
+
     return (
         <>
             <ProSidebar
@@ -50,18 +53,18 @@ function Sidebar({ image, collapsed, handleToggleSidebar }) {
                         <MenuItem
                             icon={<MdDashboard />}
                         >
-                            Dashboard
+                            {t('textsidebardashboard')}
                             <Link to='/admins' />
                         </MenuItem>
                     </Menu>
                     <Menu iconShape="circle">
                         <SubMenu
-                            title='Feature'
+                            title={t('textsidebarFeature')}
                             icon={<FaGem />}
                         >
-                            <MenuItem>Manager Users <Link to='/admins/manage-users' /></MenuItem>
-                            <MenuItem>Manager Quiz <Link to='/admins/manage-quiz' /></MenuItem>
-                            <MenuItem>Manager Questions <Link to='/admins/manage-questions' /></MenuItem>
+                            <MenuItem>{t('textsidebarManagerUsers')} <Link to='/admins/manage-users' /></MenuItem>
+                            <MenuItem>{t('textsidebarManagerQuiz')} <Link to='/admins/manage-quiz' /></MenuItem>
+                            <MenuItem>{t('textsidebarManagerQuestions')} <Link to='/admins/manage-questions' /></MenuItem>
                         </SubMenu>
                     </Menu>
                 </SidebarContent>

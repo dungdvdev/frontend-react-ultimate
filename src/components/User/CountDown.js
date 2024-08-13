@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-function CountDown({ onTimeUp }) {
-    const [count, setCount] = useState(300);
+function CountDown({ onTimeUp, count, setCount }) {
+
 
     useEffect(() => {
         if (count === 0) {

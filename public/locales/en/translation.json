@@ -3,5 +3,17 @@
     "navlinkusers": "Users",
     "navlinkadmin": "Admin",
     "textlogin": "Log in",
-    "textsignin": "Sign in"
+    "textsignin": "Sign in",
+    "textprofile": "Profile",
+    "textlogout": "Log out",
+    "textsettings": "Settings",
+    "homepagetitle1": "Make forms worth filling out",
+    "homepagetitle2": "Get more data—like signups, feedback, and anything else—with forms designed to be refreshingly different.",
+    "homepagebtnlogin": "Login Quiz Now",
+    "homepagebtnusers": "Doing Quiz Now",
+    "textsidebardashboard": "Dashboard",
+    "textsidebarFeature": "Feature",
+    "textsidebarManagerUsers": "Manager Users",
+    "textsidebarManagerQuiz": "Manager Quiz",
+    "textsidebarManagerQuestions": "Manager Questions"
 }

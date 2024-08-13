@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import CountDown from "./CountDown";
 
-function RightContent({ data, setIndex, handleFinishQuiz }) {
+function RightContent({ data, setIndex, handleFinishQuiz, setIsShowAnswer, count, setCount }) {
     const refDiv = useRef([]);
 
     const getClassQuestion = (item, index) => {
@@ -16,6 +16,7 @@ function RightContent({ data, setIndex, handleFinishQuiz }) {
 
     const onTimeUp = () => {
         handleFinishQuiz();
+        setIsShowAnswer(true);
     }
 
     const handleClickQuestion = (question, index) => {
@@ -43,6 +44,8 @@ function RightContent({ data, setIndex, handleFinishQuiz }) {
             <div className="group-timer">
                 <CountDown
                     onTimeUp={onTimeUp}
+                    count={count}
+                    setCount={setCount}
                 />
             </div>
             <div className="group-questions">

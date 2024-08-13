@@ -16,6 +16,9 @@ function DetailQuiz() {
     const [index, setIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [dataModal, setDataModal] = useState({});
+    const [isSubmitQuiz, setIsSubmitQuiz] = useState(false);
+    const [isShowAnswer, setIsShowAnswer] = useState(false);
+    const [count, setCount] = useState(300);
 
     const handlePrev = () => {
         if (index - 1 < 0) return;
@@ -74,10 +77,38 @@ function DetailQuiz() {
             //submit api
             let res = await postSubmitQuiz(payload);
             if (res && res.EC === 0) {
-                setShowModal(true);
+                console.log(res.DT);
+                setIsSubmitQuiz(true);
                 setDataModal(res.DT);
+                setShowModal(true);
+                setCount(0);
+
+                //update DataQuiz with correct answer
+                if (res.DT && res.DT.quizData) {
+                    let dataQuizClone = _.cloneDeep(dataQuiz);
+                    let a = res.DT.quizData;
+                    for (let q of a) {
+                        for (let i = 0; i < dataQuizClone.length; i++) {
+                            if (+q.questionId === +dataQuizClone[i].questionId) {
+                                //update answer
+                                let newAnswers = [];
+                                for (let j = 0; j < dataQuizClone[i].answers.length; j++) {
+                                    let s = q.systemAnswers.find(item => +item.id === +dataQuizClone[i].answers[j].id)
+                                    if (s) {
+                                        dataQuizClone[i].answers[j].isCorrect = true;
+                                    } else {
+                                        dataQuizClone[i].answers[j].isCorrect = false;
+                                    }
+                                    newAnswers.push(dataQuizClone[i].answers[j]);
+                                }
+                                dataQuizClone[i].answers = newAnswers;
+                            }
+                        }
+                    }
+                    setDataQuiz(dataQuizClone);
+                }
             } else {
-                alert('somthing wrong...')
+                alert('somthing wrongs....')
             }
         }
     }
@@ -100,6 +131,7 @@ function DetailQuiz() {
                             item.answers.isSelected = false;
                             answers.push(item.answers);
                         })
+                        answers = _.orderBy(answers, ['id'], ['asc']);
                         return { questionId: key, answers, questionDescription, image }
                     })
                     .value();
@@ -123,6 +155,7 @@ function DetailQuiz() {
                             handleCheckbox={handleCheckbox}
                             data={dataQuiz && dataQuiz.length > 0 && dataQuiz[index]}
                             index={index}
+                            isShowAnswer={isShowAnswer}
                         />
                         <div className='quiz-actions'>
                             <button
@@ -136,12 +169,19 @@ function DetailQuiz() {
                             {dataQuiz.length === index + 1 &&
                                 <button
                                     className='btn btn-warning'
-                                    onClick={() => { handleFinishQuiz() }}>Finish</button>
+                                    onClick={() => { handleFinishQuiz() }}
+                                    disabled={isSubmitQuiz}
+                                >Finish</button>
                             }
                         </div>
                     </div>
                     {showModal &&
-                        <ModalQuizResult show={showModal} setShow={setShowModal} dataModal={dataModal} />
+                        <ModalQuizResult
+                            show={showModal}
+                            setShow={setShowModal}
+                            dataModal={dataModal}
+                            setIsShowAnswer={setIsShowAnswer}
+                        />
                     }
 
                 </div>
@@ -149,7 +189,10 @@ function DetailQuiz() {
                     <RightContent
                         data={dataQuiz}
                         setIndex={setIndex}
+                        setIsShowAnswer={setIsShowAnswer}
                         handleFinishQuiz={handleFinishQuiz}
+                        count={count}
+                        setCount={setCount}
                     />
                 </div>
             </div>

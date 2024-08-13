@@ -1,7 +1,10 @@
 import { useSelector } from 'react-redux';
 import video from '../../asset/videos/hero.mp4';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 function Homepage() {
+    const { t } = useTranslation();
     const isAuthenicated = useSelector(state => state.user.isAuthenicated);
     // const account = useSelector(state => state.user.account);
     const navigate = useNavigate();
@@ -15,15 +18,12 @@ function Homepage() {
                         </video>
                     </div>
                     <div className='hero-module-content'>
-                        <h1 className='hero-module--title'>
-                            Make forms<br />
-                            worth filling out
-                        </h1>
-                        <p className='hero-module-body'><span>Get more data—like signups, feedback, and anything else—with forms designed to be <strong>refreshingly different.</strong></span></p>
+                        <h1 className='hero-module--title'>{t('homepagetitle1')}</h1>
+                        <p className='hero-module-body'><span>{t('homepagetitle2')}</span></p>
                         <div className='hero-module-action'>
                             {isAuthenicated === false
-                                ? <button className='hero-signup' onClick={() => { navigate('/login') }}>Login Quiz Now</button>
-                                : <button className='hero-signup' onClick={() => { navigate('/users') }}>Doing Quiz Now</button>
+                                ? <button className='hero-signup' onClick={() => { navigate('/login') }}>{t('homepagebtnlogin')}</button>
+                                : <button className='hero-signup' onClick={() => { navigate('/users') }}>{t('homepagebtnusers')}</button>
                             }
                         </div>
                     </div>
